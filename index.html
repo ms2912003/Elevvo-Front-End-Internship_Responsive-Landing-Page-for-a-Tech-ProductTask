@@ -315,7 +315,6 @@
         const themeToggle = document.getElementById('theme-toggle');
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
-        // Initial theme setup based on localStorage or system preference
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
         } else {
@@ -341,16 +340,13 @@
             document.getElementById('moon-icon-mobile').classList.toggle('hidden', !isDark);
         }
 
-        // Add event listeners
         themeToggle.addEventListener('click', toggleTheme);
         if (themeToggleMobile) {
             themeToggleMobile.addEventListener('click', toggleTheme);
         }
 
-        // Update icons on initial load
         updateIcons();
 
-        // Mobile Menu Toggle Script
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
 
