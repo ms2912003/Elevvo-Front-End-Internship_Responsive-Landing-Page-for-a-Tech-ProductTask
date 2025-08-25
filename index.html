@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTask - Project Management Simplified</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': {
+                            50: '#f0f7ff',
+                            100: '#e1efff',
+                            200: '#c2ddff',
+                            300: '#85c2ff',
+                            400: '#47a6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e3a8a',
+                            900: '#1e305e'
+                        },
+                        'secondary-gray': {
+                            100: '#f9fafb',
+                            200: '#f3f4f6',
+                            300: '#e5e7eb',
+                            400: '#d1d5db',
+                            500: '#9ca3af',
+                            600: '#6b7280',
+                            700: '#4b5563',
+                            800: '#374151',
+                            900: '#1f2937'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 antialiased leading-normal transition-colors duration-500">
+
+    <header>
+        <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50 transition-colors duration-500">
+            <div class="container mx-auto px-4 flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center text-2xl font-bold text-blue-500 gap-1">
+                        <i class="fas fa-tasks"></i> FlowTask
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium transition duration-300">Features</a>
+                    <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium transition duration-300">Testimonials</a>
+                    <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium transition duration-300">Pricing</a>
+                    <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">Get Started</a>
+                    <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl focus:outline-none">
+                        <i class="fas fa-sun" id="sun-icon"></i>
+                        <i class="fas fa-moon hidden" id="moon-icon"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl focus:outline-none">
+                        <i class="fas fa-sun" id="sun-icon-mobile"></i>
+                        <i class="fas fa-moon hidden" id="moon-icon-mobile"></i>
+                    </button>
+                    <button id="hamburger" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg py-4 transition-transform duration-300 ease-in-out">
+                <a href="#features" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Features</a>
+                <a href="#testimonials" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Testimonials</a>
+                <a href="#pricing" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Pricing</a>
+                <a href="#" class="block py-2 px-4 text-white bg-blue-500 text-center font-semibold mx-4 mt-2 rounded-lg hover:bg-blue-600">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 pt-32 pb-24 lg:pb-32 transition-colors duration-500">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
+            <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 lg:pr-12">
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-blue-900 dark:text-white leading-tight mb-6">Streamline Your Projects, Boost Productivity</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">FlowTask is the all-in-one project management tool that helps teams organize tasks, track progress, and meet deadlines efficiently.</p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1">Start Free Trial</a>
+                    <a href="#" class="bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg font-semibold border border-blue-600 dark:border-blue-400 hover:bg-gray-100 dark:hover:bg-gray-600 transition duration-300 transform hover:-translate-y-1">
+                        Watch Demo <i class="fas fa-play-circle ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 text-center">
+                <img src="/1.png" alt="FlowTask Dashboard" class="w-full h-auto rounded-xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-500">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-blue-900 dark:text-white mb-4">Powerful Features</h2>
+            <p class="text-lg text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">Everything you need to manage projects effectively</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 dark:text-white mb-2">Task Management</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Create, assign, and track tasks with our intuitive drag-and-drop interface.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 dark:text-white mb-2">Progress Tracking</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Visualize project progress with customizable charts and reports.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 dark:text-white mb-2">Team Collaboration</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Share files, comment on tasks, and keep everyone in the loop.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 dark:text-white mb-2">Time Management</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Set deadlines, schedule tasks, and never miss a milestone again.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 dark:text-white mb-2">Mobile Access</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Manage your projects on the go with our mobile app.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl dark:hover:shadow-lg transform hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center text-blue-600 dark:text-blue-400 text-2xl">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 dark:text-white mb-2">Secure Data</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Your data is protected with enterprise-grade security measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-500">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-blue-900 dark:text-white mb-4">What Our Customers Say</h2>
+            <p class="text-lg text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">Join thousands of satisfied teams worldwide</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="transform hover:-translate-y-2 transition duration-300 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">"FlowTask has transformed how our team works. We've improved our project completion rate by 45% since we started using it."</p>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/50x50/3b82f6/FFFFFF/png?text=J" alt="John Doe" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-blue-900 dark:text-white">John Doe</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">Project Manager, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="transform hover:-translate-y-2 transition duration-300 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">"The intuitive interface made it easy for our non-technical team members to adopt quickly. Onboarding was a breeze!"</p>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/50x50/3b82f6/FFFFFF/png?text=S" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-blue-900 dark:text-white">Sarah Johnson</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">Marketing Director, InnovateCo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="transform hover:-translate-y-2 transition duration-300 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <p class="text-gray-600 dark:text-gray-400 italic mb-6">"The reporting features have given us insights we never had before. We can now make data-driven decisions about our projects."</p>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/50x50/3b82f6/FFFFFF/png?text=M" alt="Michael Chen" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-semibold text-blue-900 dark:text-white">Michael Chen</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">CTO, StartupHub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-500">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-blue-900 dark:text-white mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-lg text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">Choose the plan that works best for your team</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-900 dark:text-white mb-4">Starter</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Perfect for small teams getting started</p>
+                    <div class="flex justify-center items-baseline mb-6">
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">$</span>
+                        <span class="text-5xl font-extrabold text-blue-900 dark:text-white mx-1">0</span>
+                        <span class="text-lg text-gray-500 dark:text-gray-400">/month</span>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Up to 5 users</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Basic task management</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> 5GB storage</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Community support</li>
+                    </ul>
+                    <a href="#" class="block w-full text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-white transition duration-300">Get Started</a>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl border-2 border-blue-600 dark:border-blue-400 text-center transform scale-105 hover:scale-110 transition duration-300 relative">
+                    <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+                    <h3 class="text-2xl font-bold text-blue-900 dark:text-white mb-4">Professional</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Ideal for growing businesses</p>
+                    <div class="flex justify-center items-baseline mb-6">
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">$</span>
+                        <span class="text-5xl font-extrabold text-blue-900 dark:text-white mx-1">12</span>
+                        <span class="text-lg text-gray-500 dark:text-gray-400">/user/month</span>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Unlimited users</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Advanced task management</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Time tracking</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> 100GB storage</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Priority support</li>
+                    </ul>
+                    <a href="#" class="block w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Start Free Trial</a>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 text-center transform hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-900 dark:text-white mb-4">Enterprise</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">For large organizations with complex needs</p>
+                    <div class="flex justify-center items-baseline mb-6">
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">$</span>
+                        <span class="text-5xl font-extrabold text-blue-900 dark:text-white mx-1">24</span>
+                        <span class="text-lg text-gray-500 dark:text-gray-400">/user/month</span>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Unlimited everything</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Custom workflows</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Advanced analytics</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Single sign-on (SSO)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Dedicated account manager</li>
+                    </ul>
+                    <a href="#" class="block w-full text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-white transition duration-300">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to Transform Your Workflow?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Join thousands of teams already using FlowTask to manage their projects more efficiently.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 transform hover:-translate-y-1">Start Free Trial</a>
+                <a href="#" class="bg-transparent text-white border border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300 transform hover:-translate-y-1">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 dark:bg-gray-800 text-white py-16 transition-colors duration-500">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="flex flex-col">
+                    <a href="#" class="flex items-center text-2xl font-bold text-white mb-4 gap-1">
+                        <i class="fas fa-tasks"></i> FlowTask
+                    </a>
+                    <p class="text-gray-400 mb-6">Making project management simple and effective for teams of all sizes.</p>
+                    <div class="flex space-x-4 text-xl">
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Use Cases</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 FlowTask. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+        // Initial theme setup based on localStorage or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            updateIcons();
+        }
+
+        function updateIcons() {
+            const isDark = html.classList.contains('dark');
+            document.getElementById('sun-icon').classList.toggle('hidden', isDark);
+            document.getElementById('moon-icon').classList.toggle('hidden', !isDark);
+            document.getElementById('sun-icon-mobile').classList.toggle('hidden', isDark);
+            document.getElementById('moon-icon-mobile').classList.toggle('hidden', !isDark);
+        }
+
+        // Add event listeners
+        themeToggle.addEventListener('click', toggleTheme);
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+
+        // Update icons on initial load
+        updateIcons();
+
+        // Mobile Menu Toggle Script
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
